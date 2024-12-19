@@ -1,0 +1,26 @@
+1--
+select exam_year as year, avg(grade)
+from grades
+group by exam_year
+2--
+select student_name , avg(grade)
+from grades
+group by student_name
+3--
+select subject_name , max(grade), min(grade)
+from grades
+group by subject_name
+4--
+select exam_year , subject_name, count(grade) as test_num
+from grades
+group by subject_name
+5--
+select subject_name , exam_year, round(avg(grade))
+from grades
+group by subject_name
+HAVING avg(grade) > 85
+6--
+select grade, count(grade) as shows
+from grades
+group by (grade)
+HAVING grade > 90
